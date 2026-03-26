@@ -6,6 +6,7 @@ dependencies = []
 
 [project.scripts]
 check = "scripts.check:main"
+hx = "hxlib.cli:main"
 
 [build-system]
 requires = ["hatchling"]

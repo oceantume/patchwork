@@ -5,10 +5,47 @@ from __future__ import annotations
 import json
 import pathlib
 import sqlite3
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import NotRequired, TypedDict
 
 Path = pathlib.Path
+
+
+# ---------------------------------------------------------------------------
+# Public return types
+# ---------------------------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class CategoryRow:
+    id: int
+    name: str
+    short_name: str
+    model_count: int
+
+
+@dataclass(frozen=True)
+class ModelRow:
+    symbolic_id: str
+    name: str
+    category_id: int | None
+    category_name: str | None
+    mono: bool
+    stereo: bool
+    load: float | None
+    load_stereo: float | None
+
+
+@dataclass(frozen=True)
+class ParamRow:
+    symbolic_id: str
+    name: str
+    value_type: int
+    display_type: str | None
+    min_val: str | None
+    max_val: str | None
+    default_val: str | None
 
 
 def _assets_dir() -> Path:
@@ -172,6 +209,175 @@ class ModelDB:
             self._write_meta(conn)
 
         return (model_count, param_count)
+
+    # ------------------------------------------------------------------
+    # Query methods
+    # ------------------------------------------------------------------
+
+    def list_categories(self) -> list[CategoryRow]:
+        """All categories with model count, ordered by id."""
+        conn = self._get_conn()
+        rows = conn.execute(
+            """
+            SELECT c.id, c.name, c.short_name, COUNT(m.symbolic_id)
+            FROM categories c
+            LEFT JOIN models m ON m.category_id = c.id
+            GROUP BY c.id
+            ORDER BY c.id
+            """
+        ).fetchall()
+        return [
+            CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+            for r in rows
+        ]
+
+    def find_category(self, query: str) -> list[CategoryRow]:
+        """Case-insensitive match on name or short_name (exact first, then LIKE)."""
+        conn = self._get_conn()
+        q = query.lower()
+        rows = conn.execute(
+            """
+            SELECT c.id, c.name, c.short_name, COUNT(m.symbolic_id)
+            FROM categories c
+            LEFT JOIN models m ON m.category_id = c.id
+            WHERE LOWER(c.name) = ? OR LOWER(c.short_name) = ?
+            GROUP BY c.id
+            ORDER BY c.id
+            """,
+            (q, q),
+        ).fetchall()
+        if rows:
+            return [
+                CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+                for r in rows
+            ]
+        rows = conn.execute(
+            """
+            SELECT c.id, c.name, c.short_name, COUNT(m.symbolic_id)
+            FROM categories c
+            LEFT JOIN models m ON m.category_id = c.id
+            WHERE LOWER(c.name) LIKE '%' || ? || '%'
+            GROUP BY c.id
+            ORDER BY c.id
+            """,
+            (q,),
+        ).fetchall()
+        return [
+            CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+            for r in rows
+        ]
+
+    def list_models(self, category_id: int) -> list[ModelRow]:
+        """Models in a category, ordered by name, with category_name joined."""
+        conn = self._get_conn()
+        rows = conn.execute(
+            """
+            SELECT m.symbolic_id, m.name, m.category_id, c.name,
+                   m.mono, m.stereo, m.load, m.load_stereo
+            FROM models m
+            LEFT JOIN categories c ON c.id = m.category_id
+            WHERE m.category_id = ?
+            ORDER BY m.name
+            """,
+            (category_id,),
+        ).fetchall()
+        return [
+            ModelRow(
+                symbolic_id=r[0],
+                name=r[1],
+                category_id=r[2],
+                category_name=r[3],
+                mono=bool(r[4]),
+                stereo=bool(r[5]),
+                load=r[6],
+                load_stereo=r[7],
+            )
+            for r in rows
+        ]
+
+    def get_model(self, symbolic_id: str) -> ModelRow | None:
+        """Single model by symbolic_id, or None if not found."""
+        conn = self._get_conn()
+        row = conn.execute(
+            """
+            SELECT m.symbolic_id, m.name, m.category_id, c.name,
+                   m.mono, m.stereo, m.load, m.load_stereo
+            FROM models m
+            LEFT JOIN categories c ON c.id = m.category_id
+            WHERE m.symbolic_id = ?
+            """,
+            (symbolic_id,),
+        ).fetchone()
+        if row is None:
+            return None
+        return ModelRow(
+            symbolic_id=row[0],
+            name=row[1],
+            category_id=row[2],
+            category_name=row[3],
+            mono=bool(row[4]),
+            stereo=bool(row[5]),
+            load=row[6],
+            load_stereo=row[7],
+        )
+
+    def get_params(self, symbolic_id: str) -> list[ParamRow]:
+        """Params for a model, in sort_order."""
+        conn = self._get_conn()
+        rows = conn.execute(
+            """
+            SELECT symbolic_id, name, value_type, display_type,
+                   min_val, max_val, default_val
+            FROM params
+            WHERE model_id = ?
+            ORDER BY sort_order
+            """,
+            (symbolic_id,),
+        ).fetchall()
+        return [
+            ParamRow(
+                symbolic_id=r[0],
+                name=r[1],
+                value_type=r[2],
+                display_type=r[3],
+                min_val=r[4],
+                max_val=r[5],
+                default_val=r[6],
+            )
+            for r in rows
+        ]
+
+    def search_models(
+        self, query: str, category_id: int | None = None
+    ) -> list[ModelRow]:
+        """Case-insensitive LIKE search on model name, with optional category filter."""
+        conn = self._get_conn()
+        q = query.lower()
+        rows = conn.execute(
+            """
+            SELECT m.symbolic_id, m.name, m.category_id, c.name,
+                   m.mono, m.stereo, m.load, m.load_stereo
+            FROM models m
+            LEFT JOIN categories c ON c.id = m.category_id
+            WHERE LOWER(m.name) LIKE '%' || ? || '%'
+              AND (? IS NULL OR m.category_id = ?)
+            ORDER BY m.name
+            """,
+            (q, category_id, category_id),
+        ).fetchall()
+        return [
+            ModelRow(
+                symbolic_id=r[0],
+                name=r[1],
+                category_id=r[2],
+                category_name=r[3],
+                mono=bool(r[4]),
+                stereo=bool(r[5]),
+                load=r[6],
+                load_stereo=r[7],
+            )
+            for r in rows
+        ]
 
     def close(self) -> None:
         if self._conn is not None:
