@@ -1,7 +1,5 @@
 """build-cache command handler."""
 
-from __future__ import annotations
-
 import argparse
 import sys
 

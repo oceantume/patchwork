@@ -1,7 +1,5 @@
 """SQLite cache for HX model data."""
 
-from __future__ import annotations
-
 import json
 import pathlib
 import sqlite3
