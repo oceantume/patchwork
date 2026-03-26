@@ -12,6 +12,9 @@ def _run(name: str, cmd: list[str]) -> tuple[str, int, str]:
 
 
 def main() -> None:
+    for cmd in [["ruff", "check", "--fix", "."], ["ruff", "format", "."]]:
+        subprocess.run(cmd)
+
     checks: list[tuple[str, list[str]]] = [
         ("lint", ["ruff", "check", "."]),
         ("fmt", ["ruff", "format", "--check", "."]),
