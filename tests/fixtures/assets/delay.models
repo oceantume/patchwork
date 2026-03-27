@@ -1,0 +1,26 @@
+[
+  {
+    "symbolicID": "HD2_DelayMagneticTape",
+    "name": "Magnetic Tape",
+    "category": 2,
+    "mono": 0,
+    "stereo": 1,
+    "load": 20.0,
+    "params": [
+      {
+        "symbolicID": "Time",
+        "name": "Time",
+        "valueType": 1,
+        "displayType": "generic_knob",
+        "min": 0.0,
+        "max": 2000.0,
+        "default": 500.0
+      }
+    ]
+  },
+  {
+    "symbolicID": "HD2_DelayWanderer",
+    "name": "Wanderer",
+    "params": []
+  }
+]

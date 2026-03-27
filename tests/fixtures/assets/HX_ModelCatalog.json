@@ -1,0 +1,4 @@
+{"categories": [
+  {"id": 1, "name": "Distortion", "shortName": "dist"},
+  {"id": 2, "name": "Delay",      "shortName": "dly"}
+]}
