@@ -219,7 +219,7 @@ class ModelDB:
 
             self._write_meta(conn)
 
-        return (model_count, param_count)
+        return (category_count, model_count, param_count)
 
     # ------------------------------------------------------------------
     # Query methods
@@ -243,8 +243,24 @@ class ModelDB:
         ]
 
     def find_category(self, query: str) -> list[Category]:
-        """Case-insensitive match on name or short_name (exact first, then LIKE)."""
+        """Case-insensitive match on name or short_name (exact first, then LIKE).
+        If query is a plain integer, match by category ID instead."""
         conn = self._get_conn()
+        if query.strip().lstrip("-").isdigit():
+            rows = conn.execute(
+                """
+                SELECT c.id, c.name, c.short_name, COUNT(m.symbolic_id)
+                FROM categories c
+                LEFT JOIN models m ON m.category_id = c.id
+                WHERE c.id = ?
+                GROUP BY c.id
+                """,
+                (int(query.strip()),),
+            ).fetchall()
+            return [
+                Category(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+                for r in rows
+            ]
         q = query.lower()
         rows = conn.execute(
             """
