@@ -225,6 +225,70 @@ class TestRemoveBlock:
 
 
 # ---------------------------------------------------------------------------
+# TestMoveBlock
+# ---------------------------------------------------------------------------
+
+
+class TestMoveBlock:
+    def test_position_updated(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [0], db)
+        p.move_block(key, 3)
+        b = p.get_block(key)
+        assert b is not None
+        assert b.position == 3
+
+    def test_path_updated(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [0], db)
+        p.move_block(key, 2, path=1)
+        b = p.get_block(key)
+        assert b is not None
+        assert b.path == 1
+
+    def test_path_unchanged_when_not_specified(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [0], db, path=1)
+        p.move_block(key, 3)
+        b = p.get_block(key)
+        assert b is not None
+        assert b.path == 1
+
+    def test_params_preserved(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [0], db)
+        params_before = p.get_block(key).params.copy()  # type: ignore[union-attr]
+        p.move_block(key, 4)
+        assert p.get_block(key).params == params_before  # type: ignore[union-attr]
+
+    def test_snapshot_state_preserved(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [0, 2], db)
+        p.move_block(key, 5)
+        tone = p._data["data"]["tone"]
+        assert tone["snapshot0"]["blocks"]["dsp0"][key] is True
+        assert tone["snapshot2"]["blocks"]["dsp0"][key] is True
+
+    def test_raises_on_unknown_key(self) -> None:
+        p = Preset.new("Test")
+        with pytest.raises(PresetError, match="block not found"):
+            p.move_block("block99", 0)
+
+    def test_raises_on_position_conflict(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        p.add_block("HD2_DistCigaretteFuzz", 0, [], db)
+        k2 = p.add_block("HD2_DistCobaltDrive", 1, [], db)
+        with pytest.raises(PresetError, match="already occupied"):
+            p.move_block(k2, 0)
+
+    def test_raises_on_position_out_of_range(self, db: ModelDB) -> None:
+        p = Preset.new("Test")
+        key = p.add_block("HD2_DistCigaretteFuzz", 0, [], db)
+        with pytest.raises(PresetError, match="out of range"):
+            p.move_block(key, 9)
+
+
+# ---------------------------------------------------------------------------
 # TestSetParam
 # ---------------------------------------------------------------------------
 

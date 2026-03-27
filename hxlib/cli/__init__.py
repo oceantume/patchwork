@@ -9,6 +9,7 @@ from hxlib.cli._inspect import inspect
 from hxlib.cli._preset import (
     preset,
     preset_add,
+    preset_move,
     preset_new,
     preset_remove,
     preset_set,
@@ -79,6 +80,15 @@ def _build_parser() -> argparse.ArgumentParser:
     remove_p.add_argument("file", help="Preset file (.hlx)")
     remove_p.add_argument("block_key", help="Block key (e.g. block0)")
     remove_p.set_defaults(preset_func=preset_remove)
+
+    move_p = preset_sub.add_parser("move", help="Move a block to a different position")
+    move_p.add_argument("file", help="Preset file (.hlx)")
+    move_p.add_argument("block_key", help="Block key (e.g. block0)")
+    move_p.add_argument("--position", type=int, required=True, help="New position 0–5")
+    move_p.add_argument(
+        "--path", type=int, default=None, help="New signal path (0=A, 1=B)"
+    )
+    move_p.set_defaults(preset_func=preset_move)
 
     set_p = preset_sub.add_parser("set", help="Set a block parameter value")
     set_p.add_argument("file", help="Preset file (.hlx)")

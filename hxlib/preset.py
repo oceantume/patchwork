@@ -207,6 +207,30 @@ class Preset:
 
         return block_key
 
+    def move_block(self, key: str, position: int, *, path: int | None = None) -> None:
+        if key in FIXED_KEYS or key not in self._dsp0():
+            raise PresetError(f"block not found: {key}")
+
+        if not 0 <= position <= 5:
+            raise PresetError(f"position {position} out of range 0–5")
+
+        blk = self._dsp0()[key]
+        resolved_path = blk.get("@path", 0) if path is None else path
+
+        for other_key, other_blk in self._effect_blocks().items():
+            if other_key == key:
+                continue
+            if (
+                other_blk.get("@path", 0) == resolved_path
+                and other_blk.get("@position", 0) == position
+            ):
+                raise PresetError(
+                    f"position {position} on path {resolved_path} is already occupied"
+                )
+
+        blk["@path"] = resolved_path
+        blk["@position"] = position
+
     def remove_block(self, key: str) -> None:
         if key in FIXED_KEYS or key not in self._dsp0():
             raise PresetError(f"block not found: {key}")

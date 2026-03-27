@@ -205,6 +205,24 @@ def _remove(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# move
+# ---------------------------------------------------------------------------
+
+
+def _move(args: argparse.Namespace) -> int:
+    path = Path(args.file)
+    try:
+        p = Preset.load(path)
+        p.move_block(args.block_key, args.position, path=args.path)
+        p.save(path)
+    except (PresetError, OSError, ValueError) as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
+    print(f"Moved {args.block_key} to position {args.position}")
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # set
 # ---------------------------------------------------------------------------
 
@@ -291,4 +309,5 @@ preset_new = _new
 preset_add = _add
 preset_remove = _remove
 preset_set = _set
+preset_move = _move
 preset_validate = _validate
