@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from hxlib.db import ModelDB
+from hxlib.models import ModelDB
 
 FIXTURES = Path(__file__).parent / "fixtures" / "assets"
 

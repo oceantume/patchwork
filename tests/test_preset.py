@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from hxlib.db import ModelDB
+from hxlib.models import ModelDB
 from hxlib.preset import (
     MAX_BLOCKS,
     BlockRow,

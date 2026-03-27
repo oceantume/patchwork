@@ -4,16 +4,16 @@ import argparse
 import sys
 
 from hxlib.cli._common import DB_PATH, W_CAT, W_ID, W_NAME, col, db
-from hxlib.db import CategoryRow, ModelDB, ModelRow, ParamRow
+from hxlib.models import Category, Model, ModelDB, Param
 
 
-def _print_categories(rows: list[CategoryRow]) -> None:
+def _print_categories(rows: list[Category]) -> None:
     print(f"{'ID':>4}  {'Name':<20}  {'Short':<8}  {'Models':>6}")
     for r in rows:
         print(f"{r.id:>4}  {r.name:<20}  {r.short_name:<8}  {r.model_count:>6}")
 
 
-def _print_models(category: CategoryRow, models: list[ModelRow]) -> None:
+def _print_models(category: Category, models: list[Model]) -> None:
     print(f"{category.name} — {category.model_count} models\n")
     print(
         f"{col('Name', W_NAME)}  {col('ID', W_ID)}"
@@ -51,7 +51,7 @@ def _browse(args: argparse.Namespace) -> int:
     return 0
 
 
-def _print_model_detail(model: ModelRow, params: list[ParamRow]) -> None:
+def _print_model_detail(model: Model, params: list[Param]) -> None:
     modes: list[str] = []
     if model.mono:
         modes.append("mono")
@@ -106,7 +106,7 @@ def _inspect(args: argparse.Namespace) -> int:
     return 0
 
 
-def _print_search_results(query: str, results: list[ModelRow]) -> None:
+def _print_search_results(query: str, results: list[Model]) -> None:
     n = len(results)
     if n == 0:
         print(f'No models found matching "{query}".')

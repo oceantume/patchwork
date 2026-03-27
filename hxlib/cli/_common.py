@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 
-from hxlib.db import ModelDB
+from hxlib.models import ModelDB
 
 W_NAME = 32
 W_ID = 32

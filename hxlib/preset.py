@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from hxlib.db import ModelDB
+from hxlib.models import ModelDB
 
 # ---------------------------------------------------------------------------
 # Constants

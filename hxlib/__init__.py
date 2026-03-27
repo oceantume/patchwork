@@ -1,12 +1,12 @@
-from hxlib.db import CategoryRow, ModelDB, ModelRow, ParamRow
+from hxlib.models import Category, Model, ModelDB, Param
 from hxlib.preset import BlockRow, Preset, PresetError, PresetMeta, ValidationIssue
 
 __all__ = [
     "BlockRow",
-    "CategoryRow",
+    "Category",
+    "Model",
     "ModelDB",
-    "ModelRow",
-    "ParamRow",
+    "Param",
     "Preset",
     "PresetError",
     "PresetMeta",

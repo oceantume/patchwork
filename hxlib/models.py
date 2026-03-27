@@ -16,7 +16,7 @@ Path = pathlib.Path
 
 
 @dataclass(frozen=True)
-class CategoryRow:
+class Category:
     id: int
     name: str
     short_name: str
@@ -24,7 +24,7 @@ class CategoryRow:
 
 
 @dataclass(frozen=True)
-class ModelRow:
+class Model:
     symbolic_id: str
     name: str
     category_id: int | None
@@ -36,7 +36,7 @@ class ModelRow:
 
 
 @dataclass(frozen=True)
-class ParamRow:
+class Param:
     symbolic_id: str
     name: str
     value_type: int
@@ -47,7 +47,7 @@ class ParamRow:
 
 
 def _assets_dir() -> Path:
-    # db.py → hxlib/ → project_root/ → assets/res/
+    # models.py → hxlib/ → project_root/ → assets/res/
     return Path(__file__).parent.parent / "assets" / "res"
 
 
@@ -212,7 +212,7 @@ class ModelDB:
     # Query methods
     # ------------------------------------------------------------------
 
-    def list_categories(self) -> list[CategoryRow]:
+    def list_categories(self) -> list[Category]:
         """All categories with model count, ordered by id."""
         conn = self._get_conn()
         rows = conn.execute(
@@ -225,11 +225,11 @@ class ModelDB:
             """
         ).fetchall()
         return [
-            CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+            Category(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
             for r in rows
         ]
 
-    def find_category(self, query: str) -> list[CategoryRow]:
+    def find_category(self, query: str) -> list[Category]:
         """Case-insensitive match on name or short_name (exact first, then LIKE)."""
         conn = self._get_conn()
         q = query.lower()
@@ -246,7 +246,7 @@ class ModelDB:
         ).fetchall()
         if rows:
             return [
-                CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+                Category(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
                 for r in rows
             ]
         rows = conn.execute(
@@ -261,11 +261,11 @@ class ModelDB:
             (q,),
         ).fetchall()
         return [
-            CategoryRow(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
+            Category(id=r[0], name=r[1], short_name=r[2], model_count=r[3])
             for r in rows
         ]
 
-    def list_models(self, category_id: int) -> list[ModelRow]:
+    def list_models(self, category_id: int) -> list[Model]:
         """Models in a category, ordered by name, with category_name joined."""
         conn = self._get_conn()
         rows = conn.execute(
@@ -280,7 +280,7 @@ class ModelDB:
             (category_id,),
         ).fetchall()
         return [
-            ModelRow(
+            Model(
                 symbolic_id=r[0],
                 name=r[1],
                 category_id=r[2],
@@ -293,7 +293,7 @@ class ModelDB:
             for r in rows
         ]
 
-    def get_model(self, symbolic_id: str) -> ModelRow | None:
+    def get_model(self, symbolic_id: str) -> Model | None:
         """Single model by symbolic_id, or None if not found."""
         conn = self._get_conn()
         row = conn.execute(
@@ -308,7 +308,7 @@ class ModelDB:
         ).fetchone()
         if row is None:
             return None
-        return ModelRow(
+        return Model(
             symbolic_id=row[0],
             name=row[1],
             category_id=row[2],
@@ -319,7 +319,7 @@ class ModelDB:
             load_stereo=row[7],
         )
 
-    def get_params(self, symbolic_id: str) -> list[ParamRow]:
+    def get_params(self, symbolic_id: str) -> list[Param]:
         """Params for a model, in sort_order."""
         conn = self._get_conn()
         rows = conn.execute(
@@ -333,7 +333,7 @@ class ModelDB:
             (symbolic_id,),
         ).fetchall()
         return [
-            ParamRow(
+            Param(
                 symbolic_id=r[0],
                 name=r[1],
                 value_type=r[2],
@@ -345,9 +345,7 @@ class ModelDB:
             for r in rows
         ]
 
-    def search_models(
-        self, query: str, category_id: int | None = None
-    ) -> list[ModelRow]:
+    def search_models(self, query: str, category_id: int | None = None) -> list[Model]:
         """Case-insensitive LIKE search on model name, with optional category filter."""
         conn = self._get_conn()
         q = query.lower()
@@ -364,7 +362,7 @@ class ModelDB:
             (q, category_id, category_id),
         ).fetchall()
         return [
-            ModelRow(
+            Model(
                 symbolic_id=r[0],
                 name=r[1],
                 category_id=r[2],
