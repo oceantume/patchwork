@@ -1,4 +1,1277 @@
 {
-  "HD2_AmpGermanMahadeva": {"based_on": "Mesa/Boogie Mark IIC+"},
-  "HD2_DistTopSecretOD": {"based_on": "Boss OD-1"}
+  "HD2_DistKinkyBoost": {
+    "based_on": "Xotic EP Booster"
+  },
+  "HD2_DistDerangedMaster": {
+    "based_on": "Dallas Rangemaster Treble Booster"
+  },
+  "HD2_DistMinotaur": {
+    "based_on": "Klon Centaur"
+  },
+  "HD2_DistTeemah": {
+    "based_on": "Paul Cochrane Timmy Overdrive"
+  },
+  "HD2_DistHeirApparent": {
+    "based_on": "Analogman Prince of Tone"
+  },
+  "HD2_DistToneSovereign": {
+    "based_on": "Analogman King of Tone"
+  },
+  "HD2_DistAlpacaRouge": {
+    "based_on": "Way Huge Red Llama (modded)"
+  },
+  "HD2_DistCompulsiveDrive": {
+    "based_on": "Fulltone OCD"
+  },
+  "HD2_DistDhyanaDrive": {
+    "based_on": "Hermida Zendrive"
+  },
+  "HD2_DistHorizonDrive": {
+    "based_on": "Horizon Precision Drive"
+  },
+  "HD2_DistValveDriver": {
+    "based_on": "Chandler Tube Driver"
+  },
+  "HD2_DistTopSecretOD": {
+    "based_on": "DOD OD-250"
+  },
+  "HD2_DistPrizeDrive": {
+    "based_on": "Nobels ODR-1(bc)"
+  },
+  "HD2_DistScream808": {
+    "based_on": "Ibanez TS808 Tube Screamer"
+  },
+  "HD2_DistPillars": {
+    "based_on": "Earthquaker Devices Plumes"
+  },
+  "HD2_DistHedgehogD9": {
+    "based_on": "MAXON SD9 Sonic Distortion"
+  },
+  "HD2_DistStuporOD": {
+    "based_on": "BOSS SD-1 Overdrive"
+  },
+  "HD2_DistDeezOneVintage": {
+    "based_on": "BOSS DS-1 Distortion (Made-in-Japan)"
+  },
+  "HD2_DistDeezOneMod": {
+    "based_on": "BOSS DS-1 Distortion (Keeley modded)"
+  },
+  "HD2_DistRatatouilleDist": {
+    "based_on": "Pro Co RAT (with LM308 opamp)"
+  },
+  "HD2_DistVerminDist": {
+    "based_on": "Pro Co RAT"
+  },
+  "HD2_DistVitalDist": {
+    "based_on": "Earthquaker Devices Life - Octave/Distortion circuit"
+  },
+  "HD2_DistVitalBoost": {
+    "based_on": "Earthquaker Devices Life - Boost circuit"
+  },
+  "HD2_DistKWB": {
+    "based_on": "Benadrian Kowloon Walled Bunny Distortion"
+  },
+  "HD2_DistLegendaryDrive": {
+    "based_on": "Carvin VLD1 Legacy Drive (hi gain channel)"
+  },
+  "HD2_DistSwedishChainsaw": {
+    "based_on": "BOSS HM-2 Heavy Metal Distortion (MIJ)"
+  },
+  "HD2_DistArbitratorFuzz": {
+    "based_on": "Arbiter Fuzz Face"
+  },
+  "HD2_DistPocketFuzz": {
+    "based_on": "Jordan Boss Tone Fuzz"
+  },
+  "HD2_DistRamsHead": {
+    "based_on": "'73 Electro-Harmonix Ram's Head Big Muff Pi"
+  },
+  "HD2_DistTriangleFuzz": {
+    "based_on": "Electro-Harmonix Big Muff Pi"
+  },
+  "HD2_DistDarkDoveFuzz": {
+    "based_on": "Electro-Harmonix Russian Big Muff Pi"
+  },
+  "HD2_DistBallisticFuzz": {
+    "based_on": "Euthymia ICBM Fuzz"
+  },
+  "HD2_DistIndustrialFuzz": {
+    "based_on": "Z.Vex Fuzz Factory"
+  },
+  "HD2_DistTycoctaviaFuzz": {
+    "based_on": "Tycobrahe Octavia"
+  },
+  "HD2_DistWringerFuzz": {
+    "based_on": "Garbage's modded BOSS FZ-2"
+  },
+  "HD2_DistThrifterFuzz": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DistXenomorphFuzz": {
+    "based_on": "Subdecay Harmonic Antagonizer"
+  },
+  "HD2_DistMegaphone": {
+    "based_on": "Megaphone"
+  },
+  "HD2_DistBitcrusher": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DistAmpegScramblerOD": {
+    "based_on": "Ampeg Scrambler Bass Overdrive"
+  },
+  "HD2_DistZeroAmpBassDI": {
+    "based_on": "Tech 21 SansAmp Bass Driver DI V1"
+  },
+  "HD2_DistRegalBassDI": {
+    "based_on": "Noble Preamp Bass DI"
+  },
+  "HD2_DistObsidian7000": {
+    "based_on": "Darkglass Electronics Microtubes B7K Ultra"
+  },
+  "HD2_DistClawthornDrive": {
+    "based_on": "Wounded Paw Battering Ram"
+  },
+  "HD2_DM4TubeDrive": {
+    "based_on": "Chandler Tube Driver"
+  },
+  "HD2_DM4Screamer": {
+    "based_on": "Ibanez Tube Screamer"
+  },
+  "HD2_DM4Overdrive": {
+    "based_on": "DOD Overdrive/Preamp 250"
+  },
+  "HD2_DM4ClassicDistortion": {
+    "based_on": "Pro Co RAT"
+  },
+  "HD2_DM4HeavyDistortion": {
+    "based_on": "BOSS Metal Zone"
+  },
+  "HD2_DM4ColorDrive": {
+    "based_on": "Colorsound Overdriver"
+  },
+  "HD2_DM4BuzzSaw": {
+    "based_on": "Maestro Fuzz Tone"
+  },
+  "HD2_DM4FacialFuzz": {
+    "based_on": "Arbiter Fuzz Face"
+  },
+  "HD2_DM4JumboFuzz": {
+    "based_on": "Vox Tone Bender"
+  },
+  "HD2_DM4FuzzPi": {
+    "based_on": "Electro-Harmonix Big Muff Pi"
+  },
+  "HD2_DM4JetFuzz": {
+    "based_on": "Roland Jet Phaser"
+  },
+  "HD2_DM4Line6Drive": {
+    "based_on": "Colorsound Overdriver (modded)"
+  },
+  "HD2_DM4Line6Distortion": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DM4SubOctFuzz": {
+    "based_on": "PAiA Roctave Divider"
+  },
+  "HD2_DM4OctaveFuzz": {
+    "based_on": "Tycobrahe Octavia"
+  },
+  "Line6BronzeMaster": {
+    "based_on": "Maestro Bass Brassmaster"
+  },
+  "KillerZ": {
+    "based_on": "BOSS Metal Zone MT-2"
+  },
+  "HD2_CompressorDeluxeComp": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_CompressorRedSqueeze": {
+    "based_on": "MXR Dyna Comp"
+  },
+  "HD2_CompressorKinkyComp": {
+    "based_on": "Xotic SP Compressor"
+  },
+  "HD2_CompressorOptoComp": {
+    "based_on": "Ampeg Opto Comp Compressor"
+  },
+  "HD2_CompressorRochesterComp": {
+    "based_on": "Ashly CLX-52 (in conjunction w/ B. Sheehan)"
+  },
+  "HD2_CompressorLAStudioComp": {
+    "based_on": "Teletronix LA-2A"
+  },
+  "HD2_Compressor3BandComp": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_GateNoiseGate": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_GateHardGate": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_GateHorizonGate": {
+    "based_on": "Horizon Precision Drive - Gate Circuit"
+  },
+  "HD2_CompressorAutoSwell": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_FeedbackSim": {
+    "based_on": "Line 6 Original, Feedback Generator"
+  },
+  "HD2_DM4TubeComp": {
+    "based_on": "Teletronix LA-2A"
+  },
+  "HD2_DM4RedComp": {
+    "based_on": "MXR Dyna Comp"
+  },
+  "HD2_DM4BlueComp": {
+    "based_on": "BOSS CS-1"
+  },
+  "HD2_DM4BlueCompTreb": {
+    "based_on": "BOSS CS-1 (Treble switch on)"
+  },
+  "HD2_DM4VettaComp": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DM4VettaJuice": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DM4BoostComp": {
+    "based_on": "MXR Micro Amp"
+  },
+  "HD2_EQSimple3Band": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_EQLowCutHighCut": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_EQLowShelfHighShelf": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_EQParametric": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_EQSimpleTilt": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_EQGraphic10Band": {
+    "based_on": "MXR 10-Band Graphic EQ"
+  },
+  "HD2_CaliQ": {
+    "based_on": "MESA/Boogie Mark IV Graphic EQ"
+  },
+  "L6SPB_AcousGtrSim": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_TremoloOpticalTrem": {
+    "based_on": "Fender optical tremolo circuit"
+  },
+  "HD2_Tremolo60sBiasTrem": {
+    "based_on": "Vox AC-15 Tremolo"
+  },
+  "HD2_TremoloTremolo": {
+    "based_on": "BOSS PN-2"
+  },
+  "HD2_TremoloHarmonic": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_TremoloPattern": {
+    "based_on": "Lightfoot Labs Goatkeeper"
+  },
+  "HD2_PhaserScriptModPhase": {
+    "based_on": "MXR Phase 90"
+  },
+  "HD2_PhaserPebblePhaser": {
+    "based_on": "Electro-Harmonix Small Stone"
+  },
+  "HD2_PhaserUbiquitousVibe": {
+    "based_on": "Shin-ei Uni-Vibe"
+  },
+  "VIC_FlexoVibe": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PhaserDeluxePhaser": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FlangerGrayFlanger": {
+    "based_on": "MXR 117 Flanger"
+  },
+  "HD2_FlangerHarmonicFlanger": {
+    "based_on": "A/DA Flanger"
+  },
+  "HD2_FlangerCourtesanFlange": {
+    "based_on": "Electro-Harmonix Deluxe EM"
+  },
+  "HD2_FlangerDynamixFlanger": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_Chorus": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_Chorus70sChorus": {
+    "based_on": "BOSS CE-1"
+  },
+  "HD2_ChorusPlastiChorus": {
+    "based_on": "Modded Arion SCH-Z chorus"
+  },
+  "HD2_ChorusAmpegLiquifier": {
+    "based_on": "Ampeg Liquifier Chorus"
+  },
+  "HD2_ChorusTrinityChorus": {
+    "based_on": "Dytronics Tri-Stereo Chorus"
+  },
+  "HD2_Chorus4Voice": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_VibratoBubbleVibrato": {
+    "based_on": "BOSS VB-2 Vibrato"
+  },
+  "HD2_RotaryVibeRotary": {
+    "based_on": "Fender Vibratone"
+  },
+  "HD2_Rotary122Rotary": {
+    "based_on": "Leslie 122"
+  },
+  "HD2_Rotary145Rotary": {
+    "based_on": "Leslie 145"
+  },
+  "HD2_Rotary3Rotor": {
+    "based_on": "Yamaha RA-200"
+  },
+  "HD2_RetroReel": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayDoubleDouble": {
+    "based_on": "Line 6 Original"
+  },
+  "L6SPB_PolyChorus": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_RingModulatorAMRingMod": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_RingModulatorPitchRingMod": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4PatternTrem": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4Panner": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4BiasTremolo": {
+    "based_on": "1960 Vox AC-15 Tremolo"
+  },
+  "HD2_MM4OptoTremolo": {
+    "based_on": "1964 Fender Deluxe Reverb"
+  },
+  "HD2_MM4ScriptPhase": {
+    "based_on": "MXR Phase 90 (script logo version)"
+  },
+  "HD2_MM4PannedPhaser": {
+    "based_on": "Ibanez Flying Pan"
+  },
+  "HD2_MM4BarberpolePhaser": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4DualPhaser": {
+    "based_on": "Mu-Tron Bi-Phase"
+  },
+  "HD2_MM4UVibe": {
+    "based_on": "Shin-ei Uni-Vibe"
+  },
+  "HD2_MM4Phaser": {
+    "based_on": "MXR Phase 90"
+  },
+  "HD2_MM4PitchVibrato": {
+    "based_on": "BOSS VB-2"
+  },
+  "HD2_MM4Dimension": {
+    "based_on": "Roland Dimension D"
+  },
+  "HD2_MM4AnalogChorus": {
+    "based_on": "BOSS CE-1"
+  },
+  "HD2_MM4TriChorus": {
+    "based_on": "Dytronics Tri-Stereo Chorus"
+  },
+  "HD2_MM4AnalogFlanger": {
+    "based_on": "MXR Flanger"
+  },
+  "HD2_MM4JetFlanger": {
+    "based_on": "A/DA Flanger"
+  },
+  "HD2_M13ACFlanger": {
+    "based_on": "MXR Flanger"
+  },
+  "HD2_M1380AFlanger": {
+    "based_on": "A/DA Flanger"
+  },
+  "HD2_MM4FrequencyShifter": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4RingModulator": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_MM4RotaryDrum": {
+    "based_on": "Fender Vibratone"
+  },
+  "HD2_MM4RotaryDrumHorn": {
+    "based_on": "Leslie 145"
+  },
+  "TapeEater": {
+    "based_on": "Line 6 Original"
+  },
+  "Warble_Matic": {
+    "based_on": "Line 6 Original"
+  },
+  "SampleAndHold": {
+    "based_on": "Line 6 Original"
+  },
+  "Sweeper": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelaySimpleDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayModChorusEcho": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayDualDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayMultitap4": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayMultitap6": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4PingPong": {
+    "based_on": "TC Electronic 2290"
+  },
+  "HD2_DL4SweepEchoStereo": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayDuckedDelay": {
+    "based_on": "TC Electronic 2290"
+  },
+  "HD2_DelayReverseDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayVintageDigitalV2": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelaySwellVintageDigital": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayPitch": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayTransistorTape": {
+    "based_on": "Maestro Echoplex EP-3"
+  },
+  "HD2_DelayCosmosEcho": {
+    "based_on": "Roland RE-201 Space Echo"
+  },
+  "HD2_DelayHarmonyDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayBucketBrigade": {
+    "based_on": "BOSS DM-2"
+  },
+  "HD2_DelayAdriaticDelay": {
+    "based_on": "BOSS DM-2 w/ Adrian Mod"
+  },
+  "HD2_DelaySwellAdriatic": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayElephantMan": {
+    "based_on": "Electro-Harmonix Deluxe Memory Man"
+  },
+  "HD2_DelayMultiPass": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayHeliosphere": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_DelayPolySustain": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_DelayGlitch": {
+    "based_on": "Line 6 Original"
+  },
+  "Victoria_EuclideanDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayADT": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DelayCrissCross": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_DelayStutterEdit": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_DelayRatchet": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4DynamicDelayStereo": {
+    "based_on": "TC Electronic 2290"
+  },
+  "HD2_DL4StereoDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4DigDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4DigDelayWithMod": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4Reverse": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4LowResDelay": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4TubeEchoStereo": {
+    "based_on": "Maestro Echoplex EP-1"
+  },
+  "HD2_DL4TapeEchoStereo": {
+    "based_on": "Maestro Echoplex EP-3"
+  },
+  "HD2_DL4EchoPlatterStereo": {
+    "based_on": "Binson EchoRec"
+  },
+  "HD2_DL4AnalogDelayStereo": {
+    "based_on": "BOSS DM-2"
+  },
+  "HD2_DL4AnalogDelayStereoMod": {
+    "based_on": "Electro-Harmonix Deluxe Memory Man"
+  },
+  "HD2_DL4AutoVolStereo": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DL4MultiheadStereo": {
+    "based_on": "Roland RE-101 Space Echo"
+  },
+  "L6BubbleEcho": {
+    "based_on": "Line 6 Original"
+  },
+  "L6PhazeEko": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_ReverbRotating": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_DynPlate": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_ReverbDynRoom": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_ReverbDynAmbience": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_ReverbDynBloom": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_ReverbShimmer": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbHxSpring": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbNonLinear": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbGlitz": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbGanymede": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbSearchlights": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbPlateaux": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbDoubleTank": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbPlate": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbRoom": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbChamber": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbHall": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbEcho": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbTile": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbCave": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbDucking": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbOcto": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_Reverb63Spring": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbSpring": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_ReverbParticle": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PitchPitchWham": {
+    "based_on": "Digitech Whammy"
+  },
+  "HD2_PitchTwinHarmony": {
+    "based_on": "Eventide H3000"
+  },
+  "HD2_PitchSimplePitch": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PitchDualPitch": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_PitchBoctaver": {
+    "based_on": "Boss OC-2 Octaver"
+  },
+  "HD2_SynthSubtractive": {
+    "based_on": "Line 6 Original"
+  },
+  "L6SPB_PolyPitch": {
+    "based_on": "Line 6 Original"
+  },
+  "L6SPB_PolyWham": {
+    "based_on": "Line 6 Original"
+  },
+  "L6SPB_PolyDowntune": {
+    "based_on": "Line 6 Original"
+  },
+  "VIC_PitchTwelveString": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_Synth3NoteGenerator": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_Synth4OSCGenerator": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_DM4BassOctaver": {
+    "based_on": "EBS OctaBass"
+  },
+  "HD2_M13TwoVoiceHarmony": {
+    "based_on": "Eventide H3000"
+  },
+  "HD2_FM4OctiSynth": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FM4SynthOMatic": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FM4AttackSynth": {
+    "based_on": "Korg X911 Guitar Synth"
+  },
+  "HD2_FM4SynthString": {
+    "based_on": "Roland GR700 Guitar Synth"
+  },
+  "HD2_FM4Growler": {
+    "based_on": "Line 6 Original"
+  },
+  "BuzzWave": {
+    "based_on": "Line 6 Original"
+  },
+  "RezSynth": {
+    "based_on": "Line 6 Original"
+  },
+  "SeismicSynth": {
+    "based_on": "Line 6 Original"
+  },
+  "SynthAnalog": {
+    "based_on": "Line 6 Original"
+  },
+  "SynthLead": {
+    "based_on": "Line 6 Original"
+  },
+  "SynthString": {
+    "based_on": "Line 6 Original"
+  },
+  "SynthFX": {
+    "based_on": "Line 6 Original"
+  },
+  "Saturn5RingMod": {
+    "based_on": "Line 6 Original"
+  },
+  "SynthHarmony": {
+    "based_on": "Line 6 Original"
+  },
+  "DoubleBass": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FilterMutantFilter": {
+    "based_on": "Musitronics Mu-Tron III"
+  },
+  "HD2_FilterMysterFilter": {
+    "based_on": "Korg A3"
+  },
+  "HD2_FilterAutoFilter": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FilterAshevillePattrn": {
+    "based_on": "Moog Moogerfooger MF-105M MuRF Filter"
+  },
+  "HD2_FM4VoiceBox": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FM4VTron": {
+    "based_on": "Musitronics Mu-Tron III"
+  },
+  "HD2_FM4QFilter": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FM4Seeker": {
+    "based_on": "Z Vex Seek Wah"
+  },
+  "HD2_FM4ObiWah": {
+    "based_on": "Oberheim voltage-controlled S&H filter"
+  },
+  "HD2_FM4TronUp": {
+    "based_on": "Musitronics Mu-Tron III (up position)"
+  },
+  "HD2_FM4TronDown": {
+    "based_on": "Musitronics Mu-Tron III (down position)"
+  },
+  "HD2_FM4Throbber": {
+    "based_on": "Electrix Filter Factory"
+  },
+  "HD2_FM4SlowFilter": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_FM4SpinCycle": {
+    "based_on": "Craig Anderton's Wah/Anti-Wah"
+  },
+  "HD2_FM4CometTrails": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_WahUKWah846": {
+    "based_on": "Vox V846"
+  },
+  "HD2_WahTeardrop310": {
+    "based_on": "Dunlop Cry Baby Fasel model 310"
+  },
+  "HD2_WahFassel": {
+    "based_on": "Dunlop Cry Baby Super"
+  },
+  "HD2_WahWeeper": {
+    "based_on": "Arbiter Cry Baby"
+  },
+  "HD2_WahChrome": {
+    "based_on": "Vox V847"
+  },
+  "HD2_WahChromeCustom": {
+    "based_on": "Modded Vox V847"
+  },
+  "HD2_WahThroaty": {
+    "based_on": "RMC Real McCoy 1"
+  },
+  "HD2_WahVettaWah": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_WahColorful": {
+    "based_on": "Colorsound Wah-fuzz"
+  },
+  "HD2_WahConductor": {
+    "based_on": "Maestro Boomerang"
+  },
+  "HD2_WahTeardropBassQ": {
+    "based_on": "Modified Dunlop 105Q"
+  },
+  "HD2_VolPanVol": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_VolPanGain": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_VolPanPan": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_VolPanStereoWidth": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_VolPanStereoImager": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampWhoWatt100": {
+    "based_on": "Hiwatt DR-103 Brill"
+  },
+  "HD2_PreampSoupPro": {
+    "based_on": "Supro S6616"
+  },
+  "HD2_PreampStoneAge185": {
+    "based_on": "Gibson EH-185"
+  },
+  "HD2_PreampVoltageQueen": {
+    "based_on": "Victoria Vintage Queen"
+  },
+  "HD2_PreampTweedBluesNrm": {
+    "based_on": "Fender Bassman (normal channel)"
+  },
+  "HD2_PreampTweedBluesBrt": {
+    "based_on": "Fender Bassman (bright channel)"
+  },
+  "HD2_PreampFullertonNrm": {
+    "based_on": "Fender 5C3 Tweed Deluxe (normal channel)"
+  },
+  "HD2_PreampFullertonBrt": {
+    "based_on": "Fender 5C3 Tweed Deluxe (bright channel)"
+  },
+  "HD2_PreampFullertonJump": {
+    "based_on": "Fender 5C3 Tweed Deluxe (jumped channels)"
+  },
+  "HD2_PreampGrammaticoNrm": {
+    "based_on": "Grammatico LaGrange (normal channel)"
+  },
+  "HD2_PreampGrammaticoBrt": {
+    "based_on": "Grammatico LaGrange (bright channel)"
+  },
+  "HD2_PreampGrammaticoJump": {
+    "based_on": "Grammatico LaGrange (jumped channels)"
+  },
+  "HD2_PreampUSSmallTweed": {
+    "based_on": "Fender Champ"
+  },
+  "HD2_PreampUSPrincess": {
+    "based_on": "Fender Princeton Reverb"
+  },
+  "HD2_PreampUSSuperNorm": {
+    "based_on": "Fender Super Reverb (normal channel)"
+  },
+  "HD2_PreampUSSuperVib": {
+    "based_on": "Fender Super Reverb (vibrato channel)"
+  },
+  "HD2_PreampUSDeluxeNrm": {
+    "based_on": "Fender Deluxe Reverb (normal channel)"
+  },
+  "HD2_PreampUSDeluxeVib": {
+    "based_on": "Fender Deluxe Reverb (vibrato channel)"
+  },
+  "HD2_PreampUSDoubleNrm": {
+    "based_on": "Fender Twin Reverb (normal channel)"
+  },
+  "HD2_PreampUSDoubleVib": {
+    "based_on": "Fender Twin Reverb (vibrato channel)"
+  },
+  "HD2_PreampMailOrderTwin": {
+    "based_on": "Silvertone 1484"
+  },
+  "HD2_PreampDividedDuo": {
+    "based_on": "÷13 JRT 9/15"
+  },
+  "HD2_PreampInterstateZed": {
+    "based_on": "Dr Z Route 66"
+  },
+  "HD2_PreampDerailedIngrid": {
+    "based_on": "Trainwreck Circuits Express"
+  },
+  "HD2_PreampGSG100": {
+    "based_on": "Grammatico GSG100"
+  },
+  "HD2_PreampJazzRivet120": {
+    "based_on": "Roland JC-120 Jazz Chorus"
+  },
+  "HD2_PreampEssexA15": {
+    "based_on": "Vox AC-15"
+  },
+  "HD2_PreampEssexA30": {
+    "based_on": "Vox AC-30 with top boost"
+  },
+  "HD2_PreampA30FawnNrm": {
+    "based_on": "Vox AC-30 Fawn (normal channel)"
+  },
+  "HD2_PreampA30FawnBrt": {
+    "based_on": "Vox AC-30 Fawn (bright channel)"
+  },
+  "HD2_PreampMatchstickCh1": {
+    "based_on": "Matchless DC30 (channel 1)"
+  },
+  "HD2_PreampMatchstickCh2": {
+    "based_on": "Matchless DC30 (channel 2)"
+  },
+  "HD2_PreampMatchstickJump": {
+    "based_on": "Matchless DC30 (jumped)"
+  },
+  "HD2_PreampMandarin80": {
+    "based_on": "Orange OR80"
+  },
+  "HD2_PreampMandarinRocker": {
+    "based_on": "Orange Rockerverb 100 MkIII (dirty channel)"
+  },
+  "HD2_PreampMoonNrm": {
+    "based_on": "Sunn Model T (normal channel)"
+  },
+  "HD2_PreampMoonBrt": {
+    "based_on": "Sunn Model T (brite channel)"
+  },
+  "HD2_PreampMoonJump": {
+    "based_on": "Sunn Model T (jumped channels)"
+  },
+  "HD2_PreampBritJ45Nrm": {
+    "based_on": "Marshall JTM-45 (normal channel)"
+  },
+  "HD2_PreampBritJ45Brt": {
+    "based_on": "Marshall JTM-45 (bright channel)"
+  },
+  "HD2_PreampBritTremNrm": {
+    "based_on": "Marshall JTM-50 (normal channel)"
+  },
+  "HD2_PreampBritTremBrt": {
+    "based_on": "Marshall JTM-50 (bright channel)"
+  },
+  "HD2_PreampBritTremJump": {
+    "based_on": "Marshall JTM-50 (jumped)"
+  },
+  "HD2_PreampBritPlexiNrm": {
+    "based_on": "Marshall Super Lead 100 (normal channel)"
+  },
+  "HD2_PreampBritPlexiBrt": {
+    "based_on": "Marshall Super Lead 100 (bright channel)"
+  },
+  "HD2_PreampBritPlexiJump": {
+    "based_on": "Marshall Super Lead 100 (jumped)"
+  },
+  "HD2_PreampBritP75Nrm": {
+    "based_on": "Park 75 (normal channel)"
+  },
+  "HD2_PreampBritP75Brt": {
+    "based_on": "Park 75 (bright channel)"
+  },
+  "HD2_PreampBrit2203": {
+    "based_on": "Marshall JCM-800, 100W, 2203"
+  },
+  "HD2_PreampBrit2204": {
+    "based_on": "Marshall JCM-800, 50W, 2204"
+  },
+  "HD2_PreampPlacaterClean": {
+    "based_on": "Friedman BE-100 (clean channel)"
+  },
+  "HD2_PreampPlacaterDirty": {
+    "based_on": "Friedman BE-100 (BE/HBE channel)"
+  },
+  "HD2_PreampCartographer": {
+    "based_on": "Ben Adrian Cartographer"
+  },
+  "HD2_PreampGermanXtraBlue": {
+    "based_on": "Bogner Ecstacy 101B, EL34 (blue channel)"
+  },
+  "HD2_PreampGermanXtraRed": {
+    "based_on": "Bogner Ecstacy 101B, EL34 (red channel)"
+  },
+  "HD2_PreampGermanMahadeva": {
+    "based_on": "Bogner Shiva"
+  },
+  "HD2_PreampGermanUbersonic": {
+    "based_on": "Bogner Überschall"
+  },
+  "HD2_PreampCaliTexasCh1": {
+    "based_on": "MESA/Boogie Lone Star (clean channel)"
+  },
+  "HD2_PreampCaliTexasCh2": {
+    "based_on": "MESA/Boogie Lone Star (drive channel)"
+  },
+  "HD2_PreampCaliIVR1": {
+    "based_on": "MESA/Boogie Mark IV (channel I)"
+  },
+  "HD2_PreampCaliIVR2": {
+    "based_on": "MESA/Boogie Mark IV (channel II)"
+  },
+  "HD2_PreampCaliIVLead": {
+    "based_on": "MESA/Boogie Mark IV (lead channel)"
+  },
+  "HD2_PreampCaliRectifire": {
+    "based_on": "MESA/Boogie Dual Rectifier"
+  },
+  "HD2_PreampArchetypeClean": {
+    "based_on": "Paul Reed Smith Archon (clean channel)"
+  },
+  "HD2_PreampArchetypeLead": {
+    "based_on": "Paul Reed Smith Archon (lead channel)"
+  },
+  "HD2_PreampANGLMeteor": {
+    "based_on": "ENGL Fireball 100"
+  },
+  "HD2_PreampSoloLeadClean": {
+    "based_on": "Soldano SLO-100 (clean channel)"
+  },
+  "HD2_PreampSoloLeadCrunch": {
+    "based_on": "Soldano SLO-100 (crunch channel)"
+  },
+  "HD2_PreampSoloLeadOD": {
+    "based_on": "Soldano SLO-100 (overdrive channel)"
+  },
+  "HD2_PreampEVPanamaBlue": {
+    "based_on": "EVH 5150III 100, 6L6 (blue channel)"
+  },
+  "HD2_PreampEVPanamaRed": {
+    "based_on": "EVH 5150III 100, 6L6 (red channel)"
+  },
+  "HD2_PreampPVPanama": {
+    "based_on": "Peavey 5150"
+  },
+  "HD2_PreampPVVitriolClean": {
+    "based_on": "Peavey Invective (clean channel)"
+  },
+  "HD2_PreampPVVitriolCrunch": {
+    "based_on": "Peavey Invective (crunch channel)"
+  },
+  "HD2_PreampPVVitriolLead": {
+    "based_on": "Peavey Invective (lead channel)"
+  },
+  "HD2_PreampRevvGenPurple": {
+    "based_on": "Revv Generator 120 (purple/gain ch. 3)"
+  },
+  "HD2_PreampRevvGenRed": {
+    "based_on": "Revv Generator 120 (red/high gain ch. 4)"
+  },
+  "HD2_PreampDasBenzinMega": {
+    "based_on": "Diezel VH4 (mega channel)"
+  },
+  "HD2_PreampDasBenzinLead": {
+    "based_on": "Diezel VH4 (lead channel)"
+  },
+  "HD2_PreampLine6Clarity": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_AmpLine6Aristocrat": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Carillon": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Voltage": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Kinetic": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Oblivion": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Ventoux": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Elmsley": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Elektrik": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Doom": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Epic": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine62204ModV2": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Fatality": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Litigator": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampLine6Badonk": {
+    "based_on": "Line 6 Original"
+  },
+  "HD2_PreampTucknGo": {
+    "based_on": "Ampeg B-15NF Portaflex"
+  },
+  "HD2_PreampSVBeastNrm": {
+    "based_on": "Ampeg SVT (normal channel)"
+  },
+  "HD2_PreampSVBeastBrt": {
+    "based_on": "Ampeg SVT (bright channel)"
+  },
+  "HD2_PreampSVT4Pro": {
+    "based_on": "Ampeg SVT-4 PRO"
+  },
+  "HD2_PreampUSDripmanNorm": {
+    "based_on": "Fender Bassman (Silverface)"
+  },
+  "HD2_PreampWoodyBlue": {
+    "based_on": "Acoustic 360"
+  },
+  "HD2_AmpAguaSledge": {
+    "based_on": "Aguilar Tone Hammer"
+  },
+  "HD2_PreampAgua51": {
+    "based_on": "Aguilar DB51"
+  },
+  "HD2_PreampMandarinBass200": {
+    "based_on": "Orange AD200 MkIII"
+  },
+  "HD2_PreampCaliBass": {
+    "based_on": "MESA/Boogie M9 Carbine"
+  },
+  "HD2_PreampCali400Ch1": {
+    "based_on": "MESA/Boogie Bass 400+ (channel 1)"
+  },
+  "HD2_PreampCali400Ch2": {
+    "based_on": "MESA/Boogie Bass 400+ (channel 2)"
+  },
+  "HD2_PreampGCougar800": {
+    "based_on": "Gallien-Krueger GK 800RB"
+  },
+  "HD2_PreampDelSol300": {
+    "based_on": "Sunn Coliseum 300"
+  },
+  "HD2_PreampBusyOneCh1": {
+    "based_on": "Pearce BC-1 preamp (channel 1)"
+  },
+  "HD2_PreampBusyOneCh2": {
+    "based_on": "Pearce BC-1 preamp (channel 2)"
+  },
+  "HD2_PreampBusyOneJump": {
+    "based_on": "Pearce BC-1 preamp (jumped)"
+  },
+  "HD2_PreampVintagePre": {
+    "based_on": "Requisite Y7 mic preamp"
+  },
+  "HD2_CabMicIr_SoupProEllipseWithPan": {
+    "based_on": "1x6x9\" Supro S6616"
+  },
+  "HD2_CabMicIr_1x8SmallTweedWithPan": {
+    "based_on": "1x8\" Fender Champ"
+  },
+  "HD2_CabMicIr_1x10USPrincessWithPan": {
+    "based_on": "1x10\" Fender Princeton Reverb"
+  },
+  "HD2_Cab1x12FieldCoil": {
+    "based_on": "1x12\" Gibson EH185"
+  },
+  "HD2_CabMicIr_1x12FullertonWithPan": {
+    "based_on": "1x12\" Fender 5C3 Tweed Deluxe"
+  },
+  "HD2_CabMicIr_1x12GrammaticoWithPan": {
+    "based_on": "1x12\" Grammatico LaGrange"
+  },
+  "HD2_CabMicIr_1x12USDeluxeWithPan": {
+    "based_on": "1x12\" Fender Deluxe Oxford"
+  },
+  "HD2_Cab1x12PrincessBlue": {
+    "based_on": "1x12\" Fender Princeton Reverb"
+  },
+  "HD2_Cab1x12Celest12H": {
+    "based_on": "1x12\" ÷13 JRT 9/15 G12 H30"
+  },
+  "HD2_CabMicIr_1x12BlueBellWithPan": {
+    "based_on": "1x12\" Vox AC-15 Blue"
+  },
+  "HD2_Cab1x12Lead80": {
+    "based_on": "1x12\" Bogner Shiva CL80"
+  },
+  "HD2_CabMicIr_1x12CaliIVWithPan": {
+    "based_on": "1x12\" MESA/Boogie Mk IV"
+  },
+  "HD2_CabMicIr_1x12CaliEXTWithPan": {
+    "based_on": "1x12\" MESA/Boogie EVM12L"
+  },
+  "HD2_CabMicIr_2x12DoubleC12NWithPan": {
+    "based_on": "2x12\" Fender Twin C12N"
+  },
+  "HD2_CabMicIr_2x12MailC12QWithPan": {
+    "based_on": "2x12\" Silvertone 1484"
+  },
+  "HD2_CabMicIr_2x12InterstateWithPan": {
+    "based_on": "2x12\" Dr Z Z Best V30"
+  },
+  "HD2_CabMicIr_2x12JazzRivetWithPan": {
+    "based_on": "2x12\" Roland JC-120"
+  },
+  "HD2_CabMicIr_2x12SilverBellWithPan": {
+    "based_on": "2x12\" Vox AC-30TB Silver"
+  },
+  "HD2_CabMicIr_2x12BlueBellWithPan": {
+    "based_on": "2x12\" Vox AC-30 Fawn Blue"
+  },
+  "HD2_CabMicIr_2x12MatchG25WithPan": {
+    "based_on": "1x12\" Matchless DC-30 G12H30"
+  },
+  "HD2_Cab1x12MatchG25": {
+    "based_on": "1x12\" Matchless DC-30 Greenback 25"
+  },
+  "HD2_CabMicIr_4x10TweedP10RWithPan": {
+    "based_on": "4x10\" Fender Bassman P10R"
+  },
+  "HD2_CabMicIr_4x12WhoWatt100WithPan": {
+    "based_on": "4x12\" Hiwatt AP Fane"
+  },
+  "HD2_CabMicIr_4x12MandarinWithPan": {
+    "based_on": "4x12\" Orange Eminence"
+  },
+  "HD2_CabMicIr_4x12Greenback25WithPan": {
+    "based_on": "4x12\" Marshall Basketweave G12 M25"
+  },
+  "HD2_CabMicIr_4x12Greenback20WithPan": {
+    "based_on": "4x12\" Marshall Basketweave G12 M20"
+  },
+  "HD2_CabMicIr_4x12BlackbackH30WithPan": {
+    "based_on": "4x12\" Park 75 G12 H30"
+  },
+  "HD2_Cab4x121960T75": {
+    "based_on": "4x12\" Marshall 1960 AT75"
+  },
+  "HD2_CabMicIr_4x12UberV30WithPan": {
+    "based_on": "4x12\" Bogner Uberkab V30"
+  },
+  "HD2_CabMicIr_4x12UberT75WithPan": {
+    "based_on": "4x12\" Bogner Uberkab T75"
+  },
+  "HD2_CabMicIr_4x12CaliV30WithPan": {
+    "based_on": "4x12\" MESA/Boogie 4FB V30"
+  },
+  "HD2_CabMicIr_4x12XXLV30WithPan": {
+    "based_on": "4x12\" ENGL XXL V30"
+  },
+  "HD2_CabMicIr_4x12SoloLeadEMWithPan": {
+    "based_on": "4x12\" Soldano"
+  },
+  "HD2_Cab1x12DelSol": {
+    "based_on": "1x12\" Sunn Coliseum"
+  },
+  "HD2_CabMicIr_1x15AmpegB15WithPan": {
+    "based_on": "1x15\" Ampeg B-15"
+  },
+  "HD2_Cab1x18DelSol": {
+    "based_on": "1x18\" Sunn Coliseum"
+  },
+  "HD2_Cab1x18WoodyBlue": {
+    "based_on": "1x18\" Acoustic 360"
+  },
+  "HD2_CabMicIr_2x15BruteWithPan": {
+    "based_on": "2x15\" MESA/Boogie 2x15 EV"
+  },
+  "HD2_Cab4x10Rhino": {
+    "based_on": "4x10\" Ampeg SVT 410HLF"
+  },
+  "HD2_CabMicIr_6x10CaliPowerWithPan": {
+    "based_on": "6x10\" MESA/Boogie Power House"
+  },
+  "HD2_Cab8x10SVBeast": {
+    "based_on": "8x10\" Ampeg SVT"
+  }
 }
