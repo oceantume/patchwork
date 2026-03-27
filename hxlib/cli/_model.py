@@ -60,6 +60,8 @@ def _print_model_detail(model: Model, params: list[Param]) -> None:
     print(model.name)
     print(f"  ID:       {model.symbolic_id}")
     print(f"  Category: {model.category_name or 'None'}")
+    if model.based_on:
+        print(f"  Based on: {model.based_on}")
     print(f"  Modes:    {', '.join(modes) if modes else 'none'}")
     if model.load is not None and model.mono:
         load_str = f"{model.load:.2f} (mono)"

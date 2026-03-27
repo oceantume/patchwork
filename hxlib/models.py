@@ -33,6 +33,7 @@ class Model:
     stereo: bool
     load: float | None
     load_stereo: float | None
+    based_on: str | None
 
 
 @dataclass(frozen=True)
@@ -102,6 +103,7 @@ CREATE TABLE models (
     stereo       INTEGER NOT NULL DEFAULT 0,
     load         REAL,
     load_stereo  REAL,
+    based_on     TEXT,
     source_file  TEXT NOT NULL
 );
 
@@ -204,6 +206,13 @@ class ModelDB:
                 model_count += m
                 param_count += p
 
+            model_info = self._load_model_info()
+            for sym, based_on in model_info.items():
+                conn.execute(
+                    "UPDATE models SET based_on = ? WHERE symbolic_id = ?",
+                    (based_on, sym),
+                )
+
             self._write_meta(conn)
 
         return (model_count, param_count)
@@ -271,7 +280,7 @@ class ModelDB:
         rows = conn.execute(
             """
             SELECT m.symbolic_id, m.name, m.category_id, c.name,
-                   m.mono, m.stereo, m.load, m.load_stereo
+                   m.mono, m.stereo, m.load, m.load_stereo, m.based_on
             FROM models m
             LEFT JOIN categories c ON c.id = m.category_id
             WHERE m.category_id = ?
@@ -289,6 +298,7 @@ class ModelDB:
                 stereo=bool(r[5]),
                 load=r[6],
                 load_stereo=r[7],
+                based_on=r[8],
             )
             for r in rows
         ]
@@ -299,7 +309,7 @@ class ModelDB:
         row = conn.execute(
             """
             SELECT m.symbolic_id, m.name, m.category_id, c.name,
-                   m.mono, m.stereo, m.load, m.load_stereo
+                   m.mono, m.stereo, m.load, m.load_stereo, m.based_on
             FROM models m
             LEFT JOIN categories c ON c.id = m.category_id
             WHERE m.symbolic_id = ?
@@ -317,6 +327,7 @@ class ModelDB:
             stereo=bool(row[5]),
             load=row[6],
             load_stereo=row[7],
+            based_on=row[8],
         )
 
     def get_params(self, symbolic_id: str) -> list[Param]:
@@ -352,14 +363,15 @@ class ModelDB:
         rows = conn.execute(
             """
             SELECT m.symbolic_id, m.name, m.category_id, c.name,
-                   m.mono, m.stereo, m.load, m.load_stereo
+                   m.mono, m.stereo, m.load, m.load_stereo, m.based_on
             FROM models m
             LEFT JOIN categories c ON c.id = m.category_id
-            WHERE LOWER(m.name) LIKE '%' || ? || '%'
+            WHERE (LOWER(m.name) LIKE '%' || ? || '%'
+                OR LOWER(COALESCE(m.based_on, '')) LIKE '%' || ? || '%')
               AND (? IS NULL OR m.category_id = ?)
             ORDER BY m.name
             """,
-            (q, category_id, category_id),
+            (q, q, category_id, category_id),
         ).fetchall()
         return [
             Model(
@@ -371,6 +383,7 @@ class ModelDB:
                 stereo=bool(r[5]),
                 load=r[6],
                 load_stereo=r[7],
+                based_on=r[8],
             )
             for r in rows
         ]
@@ -397,9 +410,23 @@ class ModelDB:
 
     def _max_mtime(self) -> float:
         files = list(self._assets_dir.glob("*.models"))
+        info_path = self._assets_dir.parent / "model-info.json"
+        if info_path.exists():
+            files.append(info_path)
         if not files:
             return 0.0
         return max(f.stat().st_mtime for f in files)
+
+    def _load_model_info(self) -> dict[str, str]:
+        """Load model-info.json → {symbolic_id: based_on}. Returns {} if absent."""
+        info_path = self._assets_dir.parent / "model-info.json"
+        if not info_path.exists():
+            return {}
+        with info_path.open(encoding="utf-8") as fh:
+            raw: dict[str, dict[str, str]] = json.load(fh)
+        return {
+            sid: entry["based_on"] for sid, entry in raw.items() if "based_on" in entry
+        }
 
     def _load_categories(self) -> list[_RawCategory]:
         catalog_path = self._assets_dir / "HX_ModelCatalog.json"

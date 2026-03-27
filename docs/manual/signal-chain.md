@@ -62,3 +62,20 @@ Legacy effects stereo behavior:
 - Legacy Filter and Reverb — stereo
 
 **TIP:** Even with a mono playback system, stereo effects (especially reverbs) can still sound "fuller" than their mono counterparts.
+
+## Output Configurations
+
+| Scenario | Blocks to use | Blocks to skip | Send/Return role |
+|----------|--------------|----------------|-----------------|
+| **Direct to PA / audio interface** | Full Amp+Cab (or Amp + Cab/IR) required | — | Not required; used only if inserting stompboxes |
+| **Front of amp (instrument input)** | Effects blocks only | All Amp and Cab/IR blocks | Optional FX loop for external stompboxes |
+| **4-Cable Method (4CM)** | Effects before Send hit amp's preamp; effects after Return run in amp's FX loop | Amp and Cab blocks (real amp provides these) | **Required**: place a Send/Return > FX Loop block where the real amp's preamp belongs in the chain |
+| **Hybrid amp + direct (simultaneous)** | Full Amp+Cab/IR chain for FOH; tap signal to real amp with a Send block | — | Place a Send L block before the Amp block to tap the dry signal to the real amp while the full modeled chain goes to the PA |
+| **Power-amp return (amp FX loop return)** | Preamp block only (no power-amp stage) | Amp, Amp+Cab, and Cab/IR blocks (real cab handles this) | Not required unless also inserting effects |
+
+**Rules:**
+- **Direct to PA**: always include Amp+Cab or Amp+Cab/IR — FRFR/PA speakers are flat response and need the full model.
+- **Front of amp**: skip all Amp and Cab blocks — the real amp provides preamp, power amp, and cab coloration.
+- **4CM**: the FX Loop block is mandatory; omit it and the chain passes no audio. Drive/wah/comp go before the FX Loop block; delays/reverbs go after.
+- **Power-amp return**: use a Preamp block (not a full Amp block) — it supplies only the preamp stage, which is all that's needed before a real power amp.
+- **Hybrid**: use a Send L block (not FX Loop) to split the signal — the Send taps pre-amp signal to the real amp without interrupting the modeled signal flow continuing to the PA.

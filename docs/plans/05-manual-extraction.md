@@ -150,6 +150,24 @@ Each stage is designed to be handed to a single agent. When running a stage, ins
 
 ---
 
+### Stage 9 — Output Configurations
+**Output:** Appended to `docs/manual/signal-chain.md` as a new `## Output Configurations` section
+**Pages:** 6–12 (connectivity and hookup diagrams), 29 (Preamp vs. Amp note), any other references
+  to 4CM, front-of-amp, or studio/direct hookup scattered through the manual
+**Extract:**
+- For each named output scenario: what blocks to use or avoid, and where Send/Return sits in the chain
+  - **Direct to PA / audio interface** — full Amp+Cab (or Amp + Cab/IR) required; no real amp in the chain
+  - **Front of amp (instrument input)** — skip all Amp and Cab blocks; HX Stomp acts as effects-only
+  - **4-Cable Method (4CM)** — effects before the Send block hit the amp's preamp; the Send/Return
+    block inserts the real amp preamp into the chain; effects after the Return block run in the amp's
+    FX loop; Amp and Cab blocks are typically omitted
+  - **Power-amp return (amp FX loop return / effects loop)** — use Preamp block (no power-amp stage,
+    no cab); omit Cab/IR blocks if the real cab is being mic'd or the amp colours the sound
+- One-sentence rule for each scenario: what to include, what to skip, where Send/Return goes if used
+- Omit connector pinouts, cable diagrams, and physical port descriptions
+
+---
+
 ## Invocation Template
 
 When directing an agent to run a stage, use this prompt:
@@ -173,7 +191,7 @@ Style rules:
 ## Verification
 
 After all stages are complete:
-- `docs/manual/` should contain 8 `.md` files
+- `docs/manual/` should contain 8 `.md` files (stage 9 appends to `signal-chain.md`, no new file)
 - Each file should be readable in isolation — no cross-file references required to understand it
 - An agent with only `block-limits-dsp.md` + `effect-categories.md` should have enough info to
   determine whether a proposed preset is valid

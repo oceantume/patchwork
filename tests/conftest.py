@@ -4,7 +4,7 @@ import pytest
 
 from hxlib.models import ModelDB
 
-FIXTURES = Path(__file__).parent / "fixtures" / "assets"
+FIXTURES = Path(__file__).parent / "fixtures" / "assets" / "res"
 
 
 @pytest.fixture()

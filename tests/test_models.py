@@ -2,7 +2,7 @@ from pathlib import Path
 
 from hxlib.models import ModelDB
 
-FIXTURES = Path(__file__).parent / "fixtures" / "assets"
+FIXTURES = Path(__file__).parent / "fixtures" / "assets" / "res"
 
 # 3 models in distortion.models + 2 in delay.models
 _MODEL_COUNT = 5
@@ -172,3 +172,25 @@ class TestSearchModels:
     def test_no_category_filter_searches_all(self, db: ModelDB) -> None:
         results = db.search_models("magnetic")
         assert any(m.symbolic_id == "HD2_DelayMagneticTape" for m in results)
+
+    def test_search_by_based_on(self, db: ModelDB) -> None:
+        results = db.search_models("fuzz face")
+        assert len(results) == 1
+        assert results[0].symbolic_id == "HD2_DistCigaretteFuzz"
+
+    def test_search_by_based_on_case_insensitive(self, db: ModelDB) -> None:
+        results = db.search_models("FUZZ FACE")
+        assert len(results) == 1
+        assert results[0].symbolic_id == "HD2_DistCigaretteFuzz"
+
+
+class TestBasedOn:
+    def test_based_on_populated(self, db: ModelDB) -> None:
+        model = db.get_model("HD2_DistCigaretteFuzz")
+        assert model is not None
+        assert model.based_on == "Fuzz Face Mk I"
+
+    def test_based_on_none_when_absent(self, db: ModelDB) -> None:
+        model = db.get_model("HD2_DistCobaltDrive")
+        assert model is not None
+        assert model.based_on is None
