@@ -27,7 +27,3 @@ Each preset supports at most 64 parameters assigned to the Snapshots controller;
 | **Discard** | Edits are thrown away when leaving a snapshot — returning to it shows the state from the last save. |
 
 When writing parameters from an agent, **Recall** means in-memory edits persist across snapshot switches within the same session; **Discard** means any written values are lost the moment a different snapshot is selected unless the preset is saved first.
-
-## Copy, Swap, and Rename
-
-Snapshots can be **copied** to another snapshot slot (touch-hold the source footswitch, then tap the destination), **swapped** between two slots (simultaneously touch-hold both footswitches), and **renamed** with a custom label and LED color from the Preset List > ACTION menu.

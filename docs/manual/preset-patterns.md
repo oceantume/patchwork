@@ -11,12 +11,6 @@
 
 **Multi-amp setup** — Up to two Amp+Cab, Amp, or Preamp blocks (any combination) are allowed per preset; use a single Amp block followed by a Dual Cab block instead of two full Amp+Cab blocks to reduce DSP consumption while still mixing two cabinet colours.
 
-| Block type | Limit |
-|-----------|-------|
-| Amp+Cab / Amp / Preamp | Any combination, up to 2 per preset |
-| Single Cab (or Amp+Cab cab) | Up to 2 per preset |
-| Dual Cab | 1 per preset |
-
 **Stereo widening** — In a Dual Cab block, pan Cab A and Cab B in opposite directions using the per-cab Pan parameter; choosing two different cab models and panning them oppositely produces a wider stereo image.
 
 **Song-section snapshots** — Assign Snapshot 1 to Intro, Snapshot 2 to Verse, and Snapshot 3 to Chorus; each snapshot independently stores block bypass states, up to 64 controller-assigned parameter values, Command Center message states, and (optionally) tempo.
@@ -41,10 +35,6 @@
 
 **Split > A/B crossfade.** To morph between parallel paths A and B with an expression pedal, assign the Split > A/B block's Route To parameter to EXP 1 or EXP 2; heel-down sends the full signal to Path A, toe-down crossfades fully into Path B.
 
-**Save before changing presets.** Any unsaved edits to the current preset are discarded as soon as a different preset is loaded; save early and save often.
-
-**Snapshot Edits = Discard.** When Global Settings > Preferences > Snapshot Edits is set to "Discard," edits made to a snapshot are lost on switching snapshots unless the preset is saved first.
-
 **Tempo scope per snapshot.** When Global Settings > MIDI/Tempo > Tempo Select is set to "Per Snapshot," each snapshot can store its own BPM value, enabling different tempos for different song sections within one preset.
 
 ---
@@ -59,6 +49,3 @@
 
 **One Poly/high-DSP effect per preset.** Polyphonic blocks—Poly Sustain, Poly Detune, Poly Pitch, Poly Wham, Poly Capo, 12-String, and Feedbacker—are limited to one per preset because of their high DSP cost.
 
-**Grayed-out models cannot be added.** When a model appears grayed out in the model list, the current preset cannot accommodate it; reducing the DSP load by removing or swapping other blocks is required before it can be inserted.
-
-**Unsaved snapshot edits are lost on preset change.** Selecting a different preset without saving discards all snapshot edits in the current preset; this applies regardless of the Snapshot Edits (Recall/Discard) setting.

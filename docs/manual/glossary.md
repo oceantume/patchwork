@@ -32,8 +32,6 @@
 
 **Controller** — Controllers are used to adjust various parameters in real time; for example, an external expression pedal can control wah, or a MIDI keyboard mod wheel can control delay feedback and reverb depth.
 
-**Bypass** — Bypassing a block toggles it on and off (a bypassed block appears semi-transparent in Edit view); bypassing HX Stomp completely routes the signal through either Analog bypass (true bypass, no A/D/A conversion) or DSP bypass (delay echoes and reverb tails decay naturally).
+**Bypass** — Bypassing a block toggles it on and off.
 
 **Mix/Blend** — Mix or Blend controls on effects blocks determine the balance between the dry (unaffected) signal and the wet (effected) signal; when an effect lacks these controls, placing it on a parallel path achieves the same result.
-
-**TAP Tempo** — TAP Tempo allows you to set the global tempo in BPM by pressing FS3 (TAP/TUNER) repeatedly, and delay/modulation parameters set to note values will follow the tapped tempo or incoming MIDI clock.

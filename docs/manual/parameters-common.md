@@ -16,11 +16,7 @@
 | **Speed** | Hz or note division | Note division value follows current tempo |
 | **Rate** | numeric or note division | Note division value follows current tempo |
 
-Press the knob to toggle between ms (or Hz) and note division values (1/4-note, dotted 1/8-note, 1/16-note, etc.).
-
 Note division values are retained when changing models; not all Rate or Speed parameters support note-value sync because some are non-linear and highly interactive.
-
-Pressing TAP once resets any LFO-based effects (tremolos, rotary speakers).
 
 ## Rate and Speed Parameters
 

@@ -14,8 +14,6 @@ Advantages of parallel routing:
 
 **TIP:** Both paths A and B are stereo, so mono or stereo blocks can be used on either path.
 
-To remove path B, move all blocks from path B (lower) back to path A (upper).
-
 ## Path B Independent Output
 
 The Mixer block can be moved to path B, creating a separate Output block. In this configuration path A is sent from Main L/R and path B is sent from Send L/R, allowing completely independent output routing.
@@ -32,8 +30,6 @@ A Split block appears automatically when a parallel path is created. Four types 
 | **Dynamic** | Threshold, Attack, Decay, Reverse | Routes signal below the threshold to Path A and above to Path B; Attack/Decay control transition speed. |
 
 A Split block can be bypassed; when bypassed it sends both left and right signals to both paths equally regardless of type.
-
-**TIP:** With Split > Y moved all the way left, setting BalnceA to L100 and BalnceB to R100 lets you process L/MONO and RIGHT inputs independently. Combined with routing the Mixer to Path B (Send L/R), two instruments can be processed simultaneously with independent I/O.
 
 ## Mixer Block Parameters
 
@@ -60,8 +56,6 @@ Legacy effects stereo behavior:
 - Legacy Distortion, Dynamics & Pitch/Synth — mono
 - Legacy Modulation & Delay — varies (mono, stereo, or mono-in/stereo-out); adjusting Mix can narrow the stereo image
 - Legacy Filter and Reverb — stereo
-
-**TIP:** Even with a mono playback system, stereo effects (especially reverbs) can still sound "fuller" than their mono counterparts.
 
 ## Output Configurations
 
