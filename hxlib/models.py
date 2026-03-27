@@ -184,6 +184,17 @@ class ModelDB:
 
         categories = self._load_categories()
 
+        # Build authoritative symbolic_id→category_id map from the catalog.
+        # The category field in .models files uses inconsistent IDs; the catalog
+        # is the single source of truth.
+        catalog_category: dict[str, int] = {}
+        for cat in categories:
+            for sub in cat.get("subcategories", []):
+                for entry in sub.get("models", []):
+                    catalog_category[entry["id"]] = cat["id"]
+            for entry in cat.get("models", []):
+                catalog_category[entry["id"]] = cat["id"]
+
         conn = self._get_conn()
         with conn:
             # Drop and recreate all tables
@@ -206,7 +217,7 @@ class ModelDB:
             param_count = 0
 
             for models_file in models_files:
-                m, p = self._insert_models_file(conn, models_file)
+                m, p = self._insert_models_file(conn, models_file, catalog_category)
                 model_count += m
                 param_count += p
 
@@ -460,7 +471,10 @@ class ModelDB:
         return raw
 
     def _insert_models_file(
-        self, conn: sqlite3.Connection, path: Path
+        self,
+        conn: sqlite3.Connection,
+        path: Path,
+        catalog_category: dict[str, int] | None = None,
     ) -> tuple[int, int]:
         with path.open(encoding="utf-8") as fh:
             items: list[_RawModel] = json.load(fh)
@@ -474,6 +488,11 @@ class ModelDB:
                 raise ValueError(f"missing symbolicID in {source} at index {idx}")
             sym = item["symbolicID"]
             name = item.get("name", sym)
+            # Use catalog as authoritative source for category; fall back to .models
+            if catalog_category is not None and sym in catalog_category:
+                category_id = catalog_category[sym]
+            else:
+                category_id = item.get("category")
             conn.execute(
                 """
                 INSERT OR REPLACE INTO models
@@ -484,7 +503,7 @@ class ModelDB:
                 (
                     sym,
                     name,
-                    item.get("category"),
+                    category_id,
                     int(item.get("mono", False)),
                     int(item.get("stereo", False)),
                     item.get("load"),
