@@ -162,8 +162,8 @@ class ModelDB:
         current_mtime = self._max_mtime()
         return stored_mtime >= current_mtime
 
-    def build(self, *, force: bool = False) -> tuple[int, int]:
-        """Build/rebuild the cache. Returns (model_count, param_count).
+    def build(self, *, force: bool = False) -> tuple[int, int, int]:
+        """Build/rebuild the cache. Returns (category_count, model_count, param_count).
 
         Raises FileNotFoundError if assets_dir is missing.
         Raises ValueError on malformed JSON or missing symbolicID.
@@ -175,9 +175,12 @@ class ModelDB:
 
         if not force and self.is_fresh():
             conn = self._get_conn()
+            category_count = conn.execute("SELECT COUNT(*) FROM categories").fetchone()[
+                0
+            ]
             model_count = conn.execute("SELECT COUNT(*) FROM models").fetchone()[0]
             param_count = conn.execute("SELECT COUNT(*) FROM params").fetchone()[0]
-            return (model_count, param_count)
+            return (category_count, model_count, param_count)
 
         categories = self._load_categories()
 
@@ -198,6 +201,7 @@ class ModelDB:
                     (cat["id"], cat["name"], cat["shortName"]),
                 )
 
+            category_count = len(categories)
             model_count = 0
             param_count = 0
 

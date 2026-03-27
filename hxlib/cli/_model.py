@@ -150,8 +150,11 @@ def _build_cache(args: argparse.Namespace) -> int:
             print("Cache is already up to date. Use --force to rebuild.")
             return 0
         print("Building cache...", flush=True)
-        model_count, param_count = conn.build(force=args.force)
-        print(f"Cached {model_count} models, {param_count} params")
+        category_count, model_count, param_count = conn.build(force=args.force)
+        print(
+            f"Cached {category_count} categories,"
+            f" {model_count} models, {param_count} params"
+        )
         return 0
     except FileNotFoundError as e:
         print(f"error: {e}", file=sys.stderr)

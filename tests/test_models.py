@@ -4,6 +4,8 @@ from hxlib.models import ModelDB
 
 FIXTURES = Path(__file__).parent / "fixtures" / "assets" / "res"
 
+# 2 categories in HX_ModelCatalog.json fixture
+_CATEGORY_COUNT = 2
 # 3 models in distortion.models + 2 in delay.models
 _MODEL_COUNT = 5
 # Drive (float) + Enabled (bool) + Time (float)
@@ -13,12 +15,12 @@ _PARAM_COUNT = 3
 class TestBuild:
     def test_returns_counts(self, db: ModelDB) -> None:
         result = db.build(force=True)
-        assert result == (_MODEL_COUNT, _PARAM_COUNT)
+        assert result == (_CATEGORY_COUNT, _MODEL_COUNT, _PARAM_COUNT)
 
     def test_second_build_idempotent(self, db: ModelDB) -> None:
         first = db.build(force=True)
         second = db.build(force=True)
-        assert first == second == (_MODEL_COUNT, _PARAM_COUNT)
+        assert first == second == (_CATEGORY_COUNT, _MODEL_COUNT, _PARAM_COUNT)
 
 
 class TestIsFresh:
