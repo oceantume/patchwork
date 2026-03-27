@@ -114,11 +114,15 @@ def _print_search_results(query: str, results: list[Model]) -> None:
         print(f'No models found matching "{query}".')
         return
     print(f'{n} model{"s" if n != 1 else ""} matching "{query}"\n')
-    print(f"{col('Name', W_NAME)}  {col('ID', W_ID)}  {col('Category', W_CAT)}")
+    print(
+        f"{col('Name', W_NAME)}  {col('ID', W_ID)}"
+        f"  {col('Category', W_CAT)}  {'Load':>6}"
+    )
     for m in results:
+        load_str = f"{m.load:.2f}" if m.load is not None else ""
         print(
             f"{col(m.name, W_NAME)}  {col(m.symbolic_id, W_ID)}"
-            f"  {col(m.category_name or '', W_CAT)}"
+            f"  {col(m.category_name or '', W_CAT)}  {load_str:>6}"
         )
 
 
